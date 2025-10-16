@@ -1,106 +1,106 @@
 # 🎙️ Mute-Mic-Win11
 
-Atajo de teclado simple para silenciar/activar el micrófono en Windows 11 usando AutoHotkey v2.
+Simple keyboard shortcut to mute/unmute your microphone on Windows 11 using AutoHotkey v2.
 
-## ✨ Características
+## ✨ Features
 
-- **Atajo rápido**: `Win + Alt + V` para alternar el micrófono
-- **Notificación visual**: Muestra un tooltip indicando el estado actual
-- **Ligero**: No consume recursos en segundo plano
+- **Quick shortcut**: `Win + Alt + V` to toggle microphone
+- **Visual notification**: Shows a tooltip indicating current state
+- **Lightweight**: No background resource consumption
 - **Compatible**: Windows 10/11
 
-## 📋 Requisitos
+## 📋 Requirements
 
-1. **AutoHotkey v2.0** - [Descargar aquí](https://www.autohotkey.com/)
-2. **NirCmd** - [Descargar aquí](https://www.nirsoft.net/utils/nircmd.html)
+1. **AutoHotkey v2.0** - [Download here](https://www.autohotkey.com/)
+2. **NirCmd** - [Download here](https://www.nirsoft.net/utils/nircmd.html)
 
-## 🚀 Instalación
+## 🚀 Installation
 
-### Paso 1: Instalar AutoHotkey v2.0
-1. Descarga e instala AutoHotkey v2.0 desde [autohotkey.com](https://www.autohotkey.com/)
+### Step 1: Install AutoHotkey v2.0
+1. Download and install AutoHotkey v2.0 from [autohotkey.com](https://www.autohotkey.com/)
 
-### Paso 2: Descargar NirCmd
-1. Descarga NirCmd desde [nirsoft.net](https://www.nirsoft.net/utils/nircmd.html)
-2. Extrae el archivo `nircmd.exe` en una carpeta de tu elección
-3. **Importante**: Click derecho en `nircmd.exe` → Propiedades → Desbloquear (si aparece la opción)
+### Step 2: Download NirCmd
+1. Download NirCmd from [nirsoft.net](https://www.nirsoft.net/utils/nircmd.html)
+2. Extract the `nircmd.exe` file to a folder of your choice
+3. **Important**: Right-click on `nircmd.exe` → Properties → Unblock (if the option appears)
 
-### Paso 3: Configurar el script
-1. Descarga el archivo `toggle_mic.ahk` de este repositorio
-2. Abre el archivo con un editor de texto
-3. Modifica la ruta del ejecutable de NirCmd en la línea 7:
+### Step 3: Configure the script
+1. Download the `toggle_mic.ahk` file from this repository
+2. Open the file with a text editor
+3. Modify the NirCmd executable path on line 7:
    ```autohotkey
-   exe := "C:\RUTA\A\TU\CARPETA\nircmd.exe"
+   exe := "C:\PATH\TO\YOUR\FOLDER\nircmd.exe"
    ```
-4. Guarda el archivo
+4. Save the file
 
-### Paso 4: Ejecutar
-1. Doble click en `toggle_mic.ahk` para ejecutar el script
-2. Verás el icono de AutoHotkey en la bandeja del sistema
-3. Presiona `Win + Alt + V` para probar
+### Step 4: Run
+1. Double-click on `toggle_mic.ahk` to run the script
+2. You'll see the AutoHotkey icon in the system tray
+3. Press `Win + Alt + V` to test
 
-## ⌨️ Uso
+## ⌨️ Usage
 
-- **Win + Alt + V**: Alterna entre silenciar/activar el micrófono
-- Aparecerá un tooltip mostrando:
-  - 🎙️ **Micrófono encendido**
-  - 🔇 **Micrófono apagado**
+- **Win + Alt + V**: Toggle between mute/unmute microphone
+- A tooltip will appear showing:
+  - 🎙️ **Microphone on**
+  - 🔇 **Microphone off**
 
-## 🔧 Ejecutar al inicio de Windows
+## 🔧 Run at Windows Startup
 
-Para que el script se ejecute automáticamente al iniciar Windows:
+To make the script run automatically when Windows starts:
 
-1. Presiona `Win + R` y escribe: `shell:startup`
-2. Copia el archivo `toggle_mic.ahk` (o un acceso directo) en esa carpeta
-3. El script se ejecutará automáticamente cada vez que inicies Windows
+1. Press `Win + R` and type: `shell:startup`
+2. Copy the `toggle_mic.ahk` file (or a shortcut) to that folder
+3. The script will run automatically every time you start Windows
 
-## 📝 Personalización
+## 📝 Customization
 
-### Cambiar el atajo de teclado
-Edita la línea 6 del script:
+### Change the keyboard shortcut
+Edit line 6 of the script:
 ```autohotkey
 #!v::  ; Win + Alt + V
 ```
 
-Símbolos disponibles:
+Available symbols:
 - `#` = Win
 - `!` = Alt
 - `^` = Ctrl
 - `+` = Shift
 
-Ejemplos:
+Examples:
 - `^!m::` = Ctrl + Alt + M
 - `#m::` = Win + M
 - `^+v::` = Ctrl + Shift + V
 
-### Cambiar duración del tooltip
-Modifica el valor en la línea con `SetTimer`:
+### Change tooltip duration
+Modify the value in the line with `SetTimer`:
 ```autohotkey
-SetTimer(() => ToolTip(), -1500)  ; 1500 = 1.5 segundos
+SetTimer(() => ToolTip(), -1500)  ; 1500 = 1.5 seconds
 ```
 
-## ⚠️ Solución de problemas
+## ⚠️ Troubleshooting
 
-### El script no funciona
-1. Verifica que estás usando **AutoHotkey v2.0** (no v1.1)
-2. Asegúrate de que la ruta a `nircmd.exe` es correcta
-3. Desbloquea `nircmd.exe` (Propiedades → Desbloquear)
-4. Ejecuta el script como administrador
+### The script doesn't work
+1. Verify you're using **AutoHotkey v2.0** (not v1.1)
+2. Make sure the path to `nircmd.exe` is correct
+3. Unblock `nircmd.exe` (Properties → Unblock)
+4. Run the script as administrator
 
-### El estado se muestra al revés
-Si los mensajes están invertidos, cambia la línea 4:
+### The state is displayed backwards
+If the messages are inverted, change line 4:
 ```autohotkey
-global micMuted := true  ; Cambiar false por true
+global micMuted := true  ; Change false to true
 ```
 
-## 📄 Licencia
+## 📄 License
 
-MIT License - Siéntete libre de usar y modificar este script.
+MIT License - Feel free to use and modify this script.
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
-Las contribuciones son bienvenidas. Siéntete libre de abrir un issue o pull request.
+Contributions are welcome. Feel free to open an issue or pull request.
 
-## 💡 Créditos
+## 💡 Credits
 
-- [AutoHotkey](https://www.autohotkey.com/) - Framework de automatización
-- [NirCmd](https://www.nirsoft.net/utils/nircmd.html) - Herramienta de línea de comandos de NirSoft
+- [AutoHotkey](https://www.autohotkey.com/) - Automation framework
+- [NirCmd](https://www.nirsoft.net/utils/nircmd.html) - NirSoft command-line tool
