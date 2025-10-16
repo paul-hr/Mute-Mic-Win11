@@ -17,7 +17,9 @@ Simple keyboard shortcut to mute/unmute your microphone on Windows 11 using Auto
 ## 🚀 Installation
 
 ### Step 1: Install AutoHotkey v2.0
-1. Download and install AutoHotkey v2.0 from [autohotkey.com](https://www.autohotkey.com/)
+Choose one of the following options:
+- **Option A**: Install from [Microsoft Store](https://apps.microsoft.com/detail/9nblggh4v6h7) (recommended)
+- **Option B**: Download and install from [autohotkey.com](https://www.autohotkey.com/)
 
 ### Step 2: Download NirCmd
 1. Download NirCmd from [nirsoft.net](https://www.nirsoft.net/utils/nircmd.html)
